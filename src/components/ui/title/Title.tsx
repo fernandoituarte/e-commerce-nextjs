@@ -1,5 +1,4 @@
 import { titleFont } from "@/config/fonts";
-import { RiH3 } from "react-icons/ri";
 
 interface Props {
   title: string;
