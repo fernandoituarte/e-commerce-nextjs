@@ -1,7 +1,17 @@
-import React from 'react'
+import { notFound } from "next/navigation";
 
-export default function page() {
+interface Props {
+  params: {
+    id: string
+  }
+}
+export default function page({params}: Props) {
+  const {id} = params;
+
+  if(!['kids', 'women', 'men'].includes(id)) {
+    notFound();
+  }
   return (
-    <div>Category Page</div>
+    <div>Category Page {id}</div>
   )
 }
