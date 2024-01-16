@@ -1,6 +1,24 @@
+import { initialData } from "@/seed/seed";
+import { notFound } from "next/navigation";
 
-export default function ProductPage() {
+
+interface Props {
+  params:{
+    slug: string;
+  } 
+}
+export default function ProductPage({params}: Props) {
+  const { slug } = params;
+
+  const product = initialData.products.find(product => product.slug === slug);
+  
+  if(!product) {
+    notFound();
+  }
+
   return (
-    <div>Product #235</div>
+    <div className="">
+
+    </div>
   )
 }
